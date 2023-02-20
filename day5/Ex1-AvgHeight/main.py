@@ -1,3 +1,4 @@
+print("Welcome to Avg Height Calculator in the given list")
 student_heights=input("Enter the list of student heights ").split()
 print(student_heights)
 #student_heights = [180, 124, 165, 173, 189, 169, 146]
