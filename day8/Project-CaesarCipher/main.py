@@ -1,8 +1,11 @@
 from img import logo
-print(logo)
+#print(logo)
 
-# from encrypt import encrypt_fn
-# from decrypt import decrypt_fn
+# alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
+#             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ]
+
+from encrypt import encrypt_fn
+from decrypt import decrypt_fn
 from caeser import caesar_fn
 
 repeatcheckflag = True
@@ -24,3 +27,16 @@ while repeatcheckflag:
 
     if repeatcheck != "yes":
         repeatcheckflag = False
+
+
+#method 2 for handling shift number 
+# pos = alphabet.index("z")
+# shift = int(input("Type the shift number:\n"))
+# actualshift=pos+shift
+# print(actualshift)
+# if (actualshift > 26):
+#     actualshift%=26
+# else:
+#     actualshift=pos+shift
+# print(f"shift value is: {actualshift}")
+# print(f"givenchar: {alphabet.index('z')} decoded char: {alphabet[actualshift]}")
