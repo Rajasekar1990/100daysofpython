@@ -28,7 +28,6 @@ while quiz_object.still_has_question():
     quiz_object.next_question()
     quiz_object.check_answer()
 
-quiz_object.final_score()
-
-
-
+# quiz_object.final_score()
+print("You've completed the quiz")
+print(f"Your final score was {quiz_object.score}/{len(quiz_object.question_list)}")

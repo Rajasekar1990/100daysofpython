@@ -26,7 +26,7 @@ class QuizBrain:
         else:
             print("You are wrong")
         print(f"the correct answer was {self.correct_answer.lower()}")
-        print(f"your current score is {self.score}\n")
+        print(f"your current score is {self.score}\n\n")
 
     def final_score(self):
         print("You've completed the quiz")
