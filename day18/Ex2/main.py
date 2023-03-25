@@ -2,7 +2,7 @@
 from turtle import Turtle, Screen
 
 turtle_obj = Turtle()
-turtle_obj.shape("circle")
+turtle_obj.shape("triangle")
 turtle_obj.color("red")
 
 
@@ -12,8 +12,9 @@ def square():
 
 
 screen_obj = Screen()
-screen_obj.exitonclick()
+screen_obj.setup(width=500, height=500)
 
 for _ in range(4):
     square()
 
+screen_obj.exitonclick()
