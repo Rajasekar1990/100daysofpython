@@ -9,7 +9,7 @@ class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.color(FONT_COLOR)  # change the color to white as the bgcolor is set to black already.
+        self.color(FONT_COLOR)  # change the color to white as the bg color is set to black already.
         self.penup()  # remove the line on movement from 0,0 to 0,285 co-ordinate
         self.goto(x=0, y=285)  # move the scoreboard to top from 0,0 coord to 0,285
         # self.write("Score = {self.score} ", True, align="center", font=("Arial", 15, "normal"))

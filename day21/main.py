@@ -45,20 +45,23 @@ while is_game_on:
         scoreboard_obj.increment_score()  # increment the score by 1 on collision with snake
 
     # Detect on collision with wall:
-    if snake_obj.head.xcor() > 285 or snake_obj.head.xcor() < -285 or snake_obj.head.ycor() > 285 or snake_obj.head.ycor() < -285:
+    if snake_obj.head.xcor() > 280 or snake_obj.head.xcor() < -280 or \
+            snake_obj.head.ycor() > 280 or snake_obj.head.ycor() < -280:
         is_game_on = False
         scoreboard_obj.game_over()
 
     # Detect on collision with tail:
-    for segment in snake_obj.segments:
-        if snake_obj.head == segment:
-            pass
-            # this if stmt is to pass through the exceptional condn i.e snake head when checking on the
-            # first segment which cant get a hit by its head
+
+    for segment in snake_obj.segments[1:]:
+
+        # if snake_obj.head == segment:
+        #     pass
+        #     # this if stmt is to pass through the exceptional condition i.e. snake head when checking on the
+        #     # first segment which cant get a hit by its head
 
         if snake_obj.head.distance(segment) < 10:
-            # This if stmt is to check all current segment from for loop while looping through all of the segments where
-            # its distance of head and the segment is at a distance of < 10 pixel
+            # This if stmt is to check all current segment from for loop while looping through
+            # all the segments where its distance of head and the segment is at a distance of < 10 pixel
             is_game_on = False
             scoreboard_obj.game_over()
 

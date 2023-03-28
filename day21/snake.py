@@ -13,8 +13,8 @@ class Snake:
         self.segments = []
         self.create_snake()
         self.head = self.segments[0]
-        """remember to put this self.head
-           after self.create_snake() otherwise segment list carry empty values """
+        """remember to put this self.head 
+        after self.create_snake() otherwise segment list carry empty values """
 
     def create_snake(self):
         for pos in TURTLE_START_POS:
