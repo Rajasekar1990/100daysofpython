@@ -48,16 +48,17 @@ while len(guessed_state) < 50:
         t.write(answer, move=True, align="center", font=('courier', 8, 'normal'))
         guessed_state.append(answer)
 
+    # Method 1:
     if answer == "Exit":
+        # Method 1 using normal list with for loop to go through list items:
         missed_state = []
         for state in data_list:
             if state not in guessed_state:
                 missed_state.append(state)
+
+        # Method 2 using list comprehension:
+        missed_state = [state for state in data_list if state not in guessed_state]
+
         list_data = pandas.DataFrame(missed_state)
         list_data.to_csv("missed_states.csv")
         break
-
-
-
-
-
