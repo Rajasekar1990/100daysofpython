@@ -94,7 +94,7 @@ canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 # tomato_img = PhotoImage(file="tomato.png")
 # canvas.create_image(103, 224, image=tomato_img)
 tomato_img = ImageTk.PhotoImage(Image.open("tomato.png"))  # PIL solution
-canvas.create_image(100, 112, image=tomato_img)
+canvas.create_image(100, 112, image=tomato_img) # x=100 and y=112 half of canvas width and height respectively
 
 """Creating the text 00:00 with tomato image as background"""
 timer_text_var = canvas.create_text(100, 112, text="00:00", fill="red", font=(FONT_NAME, 35, "bold"))
