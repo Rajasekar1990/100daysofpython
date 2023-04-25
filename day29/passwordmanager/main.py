@@ -2,6 +2,7 @@ from tkinter import *  # Astrix imports only all of the classes and constants
 from tkinter import messagebox  # importing messagebox module
 from PIL import Image, ImageTk
 import random
+import pyperclip
 
 default_Username = "rajasekar.s1@idfcbank.com"
 
@@ -32,6 +33,9 @@ def password_gen():
 
     password_entry.insert(0, f"{''.join(final_password)}")
     # print(f"{''.join(final_password)}")
+
+    """ holding the final pwd generated in the clipboard """
+    pyperclip.copy(f"{''.join(final_password)}")
 
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
