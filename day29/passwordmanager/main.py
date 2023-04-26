@@ -1,9 +1,8 @@
-from tkinter import *  # Astrix imports only all of the classes and constants
+from tkinter import *  # Astrix imports only all classes and constants
 from tkinter import messagebox  # importing messagebox module
 from PIL import Image, ImageTk
 import random
 import pyperclip
-
 default_Username = "rajasekar.s1@idfcbank.com"
 
 
@@ -23,6 +22,7 @@ def password_gen():
     #     final_password.append(random.choice(letters))
 
     """ for loop using list comprehension """
+    # final_password = [random.choice(letters) for _ in range(0, random.randint(8, 32))]
     pwd_letter = [random.choice(letters) for _ in range(0, random.randint(8, 10))]
     pwd_num = [random.choice(numbers) for _ in range(0, 2)]
     pwd_special_char = [random.choice(special_char) for _ in range(0, 2)]
@@ -56,11 +56,11 @@ def save_pwd():
                                               f"password: {password_text}\nDo you want to save?")
 
         if save:
-            """ Writing website | username | password information to the data.txt file """
+            """ Writing website | username | password information to data.txt file """
             with open(file="data.txt", mode="a") as pwd_file_handler:
                 pwd_file_handler.write(f"{website_text} || {username_text} || {password_text}\n")
 
-            """Deleting all entries post updating the details in pwd.txt file"""
+            """Deleting all entries post updating the details in data.txt file"""
             website_entry.delete(0, END)
             username_entry.delete(0, END)
             password_entry.delete(0, END)
@@ -75,11 +75,11 @@ main_window.config(padx=50, pady=50)
 # main_window.minsize(width=500, height=500)
 main_window.title("Password Manager")
 
-""" Create a canvas widget """
+""" Creating canvas widget for placing the logo """
 canv = Canvas(main_window, width=200, height=200)
-""" Load an image """
+""" Loading the image """
 logo = ImageTk.PhotoImage(Image.open("logo.png"))
-""" Add image to the Canvas Items """
+""" Adding image to the Canvas Items """
 canv.create_image(100, 100, anchor=CENTER, image=logo)
 canv.grid(column=1, row=0)
 
@@ -98,7 +98,7 @@ password_label.grid(column=0, row=3)
 """ Creating textbox for WEBSITE entry """
 website_entry = Entry(main_window, width=41, highlightthickness=0)
 website_entry.grid(column=1, row=1, columnspan=2)
-website_entry.focus()  # placing the cursor in the website entry box during as a starting point
+website_entry.focus()  # placing the cursor in the website entry box during the start
 
 """ Creating textbox for Email/Username entry """
 username_entry = Entry(main_window, width=41, highlightthickness=0)
