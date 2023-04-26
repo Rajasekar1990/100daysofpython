@@ -5,7 +5,7 @@ import random
 import pyperclip
 import json
 
-default_Username = "rajasekar.s1@idfcbank.com"
+default_Username = "test123@gmail.com"
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
