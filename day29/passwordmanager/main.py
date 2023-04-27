@@ -3,7 +3,7 @@ from tkinter import messagebox  # importing messagebox module
 from PIL import Image, ImageTk
 import random
 import pyperclip
-default_Username = "rajasekar.s1@idfcbank.com"
+default_Username = "test123@gmail.com"
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
