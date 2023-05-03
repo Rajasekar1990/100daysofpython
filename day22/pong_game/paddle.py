@@ -1,4 +1,4 @@
-# Create a paddle class to cover step2 and step3 of main.py
+# Create a paddle class to cover step2 and step3 of test.py
 from turtle import Turtle
 
 
