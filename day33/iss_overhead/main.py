@@ -3,8 +3,8 @@ from datetime import datetime
 import smtplib
 import time
 
-MY_LAT = 10.4729  # Your latitude
-MY_LONG = 45.1263  # Your longitude
+MY_LAT = 50.4729  # Your latitude
+MY_LONG = -123.1263  # Your longitude
 MY_EMAIL = "pythonmailtest28@gmail.com"
 MY_PASSWORD = "fmcavehzstrmhseh"
 
@@ -24,10 +24,12 @@ def is_iss_overhead():
     iss_longitude = float(data["iss_position"]["longitude"])
 
     # Your position is within +5 or -5 degrees of the ISS position.
-    if (iss_latitude - 5) <= MY_LAT <= (iss_latitude + 5) or \
-            (iss_longitude - 5) <= MY_LAT <= (iss_longitude + 5):
+    if (iss_latitude - 5) <= MY_LAT <= (iss_latitude + 5) and \
+            (iss_longitude - 5) <= MY_LONG <= (iss_longitude + 5):
+        print("ISS is overhead")
         return True
     else:
+        print("ISS is away from your location")
         return False
 
 
@@ -45,7 +47,7 @@ def is_night_check():
     print(f"Sunset hour: {sunset}")
     print(f"Current Hour: {current_hour}")
 
-    if int(sunrise) <= int(current_hour) >= int(sunset):
+    if sunset >= current_hour <= sunrise:
         print("It's a day")
         return False
     else:
@@ -59,7 +61,7 @@ def is_night_check():
 # BONUS: run the code every 60 seconds.
 
 
-def email_note():
+def email_notification():
     # print(is_iss_overhead())
     # print(is_night_check())
     if is_iss_overhead() and is_night_check():
@@ -73,5 +75,6 @@ def email_note():
 
 
 while True:
-    email_note()
-    time.sleep(5)
+    time.sleep(20)
+    email_notification()
+
